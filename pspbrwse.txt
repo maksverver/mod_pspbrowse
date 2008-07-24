@@ -1,0 +1,17 @@
+Integers are stored in little-endian byte order (least significant byte first).
+
+BROWSE FILE
+offset  length
+0000h     10h   identification ("JASC BROWS FILE")
+                4A 41 53 43 20 42 52 4F 57 53 20 46 49 4C 45 00
+0017h     -     original directory (C-string)
+0400h     -     thumbnails follow
+
+THUMBNAIL
+ 4 bytes: L = file name length 
+ L bytes: file name
+40 bytes: unknown
+ 4 bytes: ??
+          FF FF FF FF
+ 4 bytes: I = image file length
+ I bytes: image file (JFIF; max 250x250)
